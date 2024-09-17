@@ -28,8 +28,6 @@
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in
   {
-    homeManagerModules = import ./modules;
-
     devShells = forAllSystems (pkgs: import ./shell.nix { inherit pkgs; });
 
     homeConfigurations = {
