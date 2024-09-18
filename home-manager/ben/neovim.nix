@@ -4,7 +4,7 @@
 
   programs.nixvim = {
     enable = true;
-    colorscheme = "onedark";
+    colorscheme = "catppuccin";
     colorschemes = {
       catppuccin.enable = true;
       gruvbox.enable = true;
@@ -37,6 +37,7 @@
       signcolumn = "yes";
 
       wrap = false;
+      background = "dark";
     };
     globals.mapleader = " ";
     keymaps = [
