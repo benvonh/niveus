@@ -1,21 +1,22 @@
-           TMUX CHEAT SHEET
----------+-----------------+--------------------------------
- yank    | prefix + y      | copy command line
-         | prefix + Y      | copy current directory
-         | copy mode + y   | copy highlight
-         | copy mode + Y   | copy highlight to command line
----------+-----------------+--------------------------------
-copycat  | prefix + /      | regex search
-         | prefix + ctrl f | find files
-         | prefix + ctrl g | find files from git status
-         | prefix + ctrl u | find URLs
-         | prefix + ctrl d | find numbers
-         | prefix + alt h  | find SHA hashes
-         | prefix + alt i  | find IP addresses
-         | n  /  N         | next / previous search
-         | ctrl + w        | copy highlight to tmux
-         | prefix + ]      | paste highlight from tmux
----------+-----------------+--------------------------------
-extrakto | prefix + tab    | fuzzy find and use
----------+-----------------+--------------------------------
-fuzzback + prefix + ?      | fuzzy find and scroll
+                      TMUX CHEAT SHEET
+----------+-----------------+--------------------------------
+ yank     | prefix + y      | copy command line
+          | prefix + Y      | copy current directory
+          | copy mode + y   | copy highlight
+          | copy mode + Y   | copy highlight to command line
+----------+-----------------+--------------------------------
+ copycat  | prefix + /      | regex search
+          | prefix + ctrl f | find files
+          | prefix + ctrl g | find files from git status
+          | prefix + ctrl u | find URLs
+          | prefix + ctrl d | find numbers
+          | prefix + alt h  | find SHA hashes
+          | prefix + alt i  | find IP addresses
+          | n  /  N         | next / previous search
+          | prefix + [      | enter copy mode
+          | prefix + ]      | paste highlight from tmux
+----------+-----------------+--------------------------------
+ extrakto | prefix + tab    | fuzzy find and use
+----------+-----------------+--------------------------------
+ fuzzback | prefix + ?      | fuzzy find and scroll
+----------+-----------------+--------------------------------

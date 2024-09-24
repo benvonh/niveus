@@ -1,5 +1,6 @@
 { pkgs, ... }:
 let
+  zsh_cheatsheet = builtins.path { path = ./zsh-cheatsheet.txt; };
   tmux_cheatsheet = builtins.path { path = ./tmux-cheatsheet.txt; };
 in
 {
@@ -7,9 +8,10 @@ in
     mouse = true;
     enable = true;
     clock24 = true;
-    shortcut = "t";
     baseIndex = 1;
     escapeTime = 300;
+    keyMode = "vi";
+    shortcut = "t";
     terminal = "screen-256color";
     shell = "${pkgs.zsh}/bin/zsh";
     plugins = with pkgs.tmuxPlugins; [
@@ -37,7 +39,7 @@ in
           set -g @catppuccin_status_left_separator ' '
           set -g @catppuccin_status_right_separator ''
           set -g @catppuccin_status_connect_separator 'no'
-          set -g @catppuccin_status_modules_right "application directory host session date_time cpu"
+          set -g @catppuccin_status_modules_right 'application directory host session date_time cpu'
         '';
       }
       vim-tmux-navigator
@@ -47,12 +49,14 @@ in
       yank
       cpu
     ];
+    # xterm-256color:RGB to fix Neovim colors in Tmux
     extraConfig = ''
-      set-option -sa terminal-overrides ',xterm-256color:RGB'
       set -g status-position top
+      set-option -sa terminal-overrides ',xterm-256color:RGB'
+      bind h popup -w 62 -h 25 'less ${tmux_cheatsheet}'
+      bind z popup -w 49 -h 22 'less ${zsh_cheatsheet}'
       bind | split-window -h
       bind - split-window -v
-      bind h popup -w 62 -h 23 "less ${tmux_cheatsheet}"
     '';
   };
 }

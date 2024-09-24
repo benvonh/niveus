@@ -1,16 +1,14 @@
 { inputs, outputs, lib, config, pkgs, ... }:
 {
   imports = [
+    ./zsh.nix
     ./tmux.nix
     ./neovim.nix
     ./starship.nix
   ];
 
-  nix = {
-    package = pkgs.nix;
-    settings.experimental-features = [ "nix-command" "flakes" ];
-  };
-
+  nix.package = pkgs.nix;
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = false;
 
   home = {
@@ -27,8 +25,8 @@
 
   programs.home-manager.enable = true;
 
-
   programs.gh.enable = true;
+
   programs.git = {
     enable = true;
     userName = "benvonh";
@@ -51,27 +49,4 @@
   };
 
   programs.zoxide.enable = true;
-
-  programs.zsh = {
-    enable = true;
-    autocd = true;
-    autosuggestion.enable = true;
-    dotDir = ".config/zsh";
-    history = {
-      expireDuplicatesFirst = true;
-      ignoreAllDups = true;
-      path = "${config.xdg.dataHome}/zsh/zsh_history";
-    };
-    syntaxHighlighting.enable = true;
-    shellAliases = {
-      cd = "z";
-      ga = "git add";
-      gd = "git diff";
-      gc = "git commit";
-      gs = "git status";
-      gp = "git pull && git push";
-      ngc = "nix-collect-garbage -d";
-      hms = "home-manager switch --flake ~/niveus";
-    };
-  };
 }
