@@ -53,7 +53,7 @@ in
     extraConfig = ''
       set -g status-position top
       set-option -sa terminal-overrides ',xterm-256color:RGB'
-      bind h popup -w 62 -h 25 'less ${tmux_cheatsheet}'
+      bind h popup -w 63 -h 25 'less ${tmux_cheatsheet}'
       bind z popup -w 49 -h 22 'less ${zsh_cheatsheet}'
       bind | split-window -h
       bind - split-window -v

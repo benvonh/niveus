@@ -1,3 +1,4 @@
+# TODO: Fix sessions and buffer management :)
 { inputs, ... }:
 {
   imports = [ inputs.nixvim.homeManagerModules.nixvim ];
