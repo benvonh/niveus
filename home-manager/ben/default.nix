@@ -5,6 +5,8 @@
     ./tmux.nix
     ./neovim.nix
     ./starship.nix
+
+    ./theme.nix
   ];
 
   nix.package = pkgs.nix;
@@ -20,6 +22,7 @@
       htop
       tldr
       ripgrep
+      brave
     ];
   };
 
